@@ -1,0 +1,74 @@
+version: '3.8'
+
+services:
+  backend:
+    container_name: backend_service
+    build:
+      context: ./backend
+      dockerfile: Dockerfile.backend
+    ports:
+      - "5000:5000"
+    volumes:
+      - ./backend:/app
+    env_file:
+      - .env
+    networks:
+      - portfolio_network
+    restart: always
+
+
+  frontend:
+    container_name: frontend_service
+    build:
+      context: ./frontend/my-app
+      dockerfile: Dockerfile.dev
+    volumes:
+      - ./frontend/my-app:/app
+      - /app/node_modules
+    ports:
+      - "3000:3000"
+    networks:
+      - portfolio_network
+    restart: always
+
+
+
+  apache:
+    container_name: apache_service
+    build:
+      context: ./apache
+      dockerfile: Dockerfile.apache
+    ports:
+      - "8080:8080"
+    networks:
+      - portfolio_network
+    volumes:
+      - ./apache/apache_server.conf:/usr/local/apache2/conf/extra/apache_server.conf
+      - ./apache/httpd.conf:/usr/local/apache2/conf/httpd.conf
+    restart: always
+
+  nginx:
+    container_name: nginx_proxy
+    image: nginx:latest
+    ports:
+      - "80:80"
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf
+      - ./nginx/sites-enabled:/etc/nginx/sites-enabled
+    networks:
+      - portfolio_network
+    depends_on:
+      - apache
+    restart: unless-stopped
+
+
+
+networks:
+  portfolio_network:
+    driver: bridge
+
+
+
+
+ 
+
