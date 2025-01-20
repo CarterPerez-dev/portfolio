@@ -536,14 +536,11 @@ function Portfolio() {
         </div>
         {isStreaming && (
           <p style={{ textAlign: 'center', marginTop: '10px', color: '#00fff5' }}>
-            Streaming response...
+            Answering...
           </p>
         )}
         {answer && (
           <div className="answer-output" ref={answerRef}>
-            <button className="copy-button" onClick={handleCopyAnswer}>
-              Copy
-            </button>
             <p className="answer-text">{answer}</p>
           </div>
         )}
