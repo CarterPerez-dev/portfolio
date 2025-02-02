@@ -1,0 +1,138 @@
+/* src/components/ExperienceTimeline/ExperienceTimeline.css */
+
+/***** ExperienceTimeline.css *****/
+
+.experience-timeline-container {
+  background-color: #0f0f0f;
+  padding: 40px 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+  border-radius: 8px;
+}
+
+.timeline-heading {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 2em;
+  color: #ff3d3d;
+  text-align: center;
+  margin-bottom: 40px;
+  text-shadow: 2px 2px #000;
+}
+
+/* Timeline Element Styles */
+.vertical-timeline-element--work {
+  /* Additional styling for work elements if needed */
+}
+
+.vertical-timeline-element--education {
+  /* Additional styling for education elements if needed */
+}
+
+/* Title & description inside timeline events */
+.vertical-timeline-element-title {
+  font-size: 1.4rem;
+  margin-bottom: 5px;
+  color: #ff3d3d;
+}
+
+.vertical-timeline-element-description {
+  font-size: 0.95rem;
+  line-height: 1.4em;
+}
+
+/* Optional Image inside timeline */
+.timeline-image-container {
+  margin-top: 15px;
+}
+
+.timeline-image-container img {
+  max-width: 100%;
+  border: 2px solid #ff3d3d;
+  border-radius: 5px;
+  object-fit: cover;
+}
+
+/* Add New Timeline Item Form */
+.add-timeline-item-form {
+  margin-top: 40px;
+  background-color: #1a1a1a;
+  border: 2px solid #ff3d3d;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.add-timeline-item-form h3 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #ff3d3d;
+  font-family: 'Orbitron', sans-serif;
+}
+
+/* Form Rows */
+.form-row {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+  gap: 5px;
+}
+
+.form-row label {
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+
+.form-row input,
+.form-row textarea,
+.form-row select {
+  background-color: #2b2b2b;
+  color: #fff;
+  border: 1px solid #ff3d3d;
+  border-radius: 4px;
+  padding: 8px;
+  font-size: 0.95rem;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+.form-row input:focus,
+.form-row textarea:focus,
+.form-row select:focus {
+  border-color: #00fff5;
+}
+
+textarea {
+  min-height: 80px;
+  resize: vertical;
+}
+
+/* Add Item Button */
+.add-item-button {
+  background-color: #ff3d3d;
+  color: #fff;
+  font-family: 'Orbitron', sans-serif;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 15px;
+  font-size: 1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  margin: 0 auto;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.add-item-button:hover {
+  background-color: #00fff5;
+  color: #000;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .experience-timeline-container {
+    padding: 20px 10px;
+  }
+
+  .timeline-heading {
+    font-size: 1.8em;
+  }
+}

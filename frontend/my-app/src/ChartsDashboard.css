@@ -1,0 +1,47 @@
+/* ChartsDashboard.css */
+
+.charts-dashboard-section {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  background-color: #0f0f0f; /* matches your portfolio's background */
+  border-radius: 8px;
+  margin-bottom: 40px;
+  color: #fff; /* white text */
+}
+
+.charts-title {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 2em;
+  color: #ff3d3d;
+  text-align: center;
+  margin-bottom: 10px;
+  text-shadow: 2px 2px #000;
+}
+
+.charts-subtitle {
+  text-align: center;
+  font-size: 1em;
+  margin-bottom: 30px;
+  color: #ccc;
+}
+
+.charts-dashboard {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+/* Chart containers */
+.chart-card {
+  background-color: #1a1a1a;
+  border: 2px solid #ff3d3d;
+  border-radius: 8px;
+  padding: 20px;
+}
+
+@media (max-width: 768px) {
+  .charts-dashboard {
+    grid-template-columns: 1fr;
+  }
+}
