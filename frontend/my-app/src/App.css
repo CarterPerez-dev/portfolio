@@ -1,10 +1,7 @@
 /* 1) Import the VT323 font at the very top */
 @import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
 
-/* 
-  Make the entire page background use the image "portfoliobackround.jpg",
-  fixed in place, and add a faint overlay to darken it slightly.
-*/
+
 html, body {
   height: 100%;
   background: linear-gradient(
@@ -30,10 +27,8 @@ html, body {
 
 /* ==================== SIDEBAR ==================== */
 .sidebar {
-  /* use the same gradient background as the hero section */
   background: linear-gradient(135deg, #0e0e0e, #1a1a1a);
   border-radius: 5px;
-  /* RED BORDER around the sidebar */
   border: 4px solid #ff3d3d;
   width: 10rem;
   height: 100%;
@@ -53,10 +48,9 @@ html, body {
   transform: translateX(0);
 }
 
-/* Keep the toggle button fixed with a CYAN border */
 .sidebar-toggle-fixed {
   background-color: #ff3d3d;
-  border: 2px solid #fff; /* CYAN border around button */
+  border: 2px solid #fff;
   color: #fff;
   font-family: 'Orbitron', sans-serif;
   font-size: 1em;
@@ -64,7 +58,7 @@ html, body {
   cursor: pointer;
   margin: 15px;
   border-radius: 4px;
-  position: fixed; /* remains in place on scroll */
+  position: fixed; 
   z-index: 10000;
 }
 
@@ -73,7 +67,6 @@ html, body {
   color: #000;
 }
 
-/* Dark Mode toggle button in the sidebar */
 .dark-mode-toggle-btn {
   margin-bottom: 1rem;
   background-color: #00fff5;
@@ -93,15 +86,14 @@ html, body {
   color: #fff;
 }
 
-/* Center the links vertically and adjust text style */
 .sidebar-links {
   list-style-type: none;
   padding: 0;
   margin: 0;
-  flex: 1; /* so it can space evenly in the column */
+  flex: 1; /
   display: flex;
   flex-direction: column;
-  justify-content: center; /* center them vertically */
+  justify-content: center;
 }
 
 .sidebar-links li {
@@ -120,7 +112,6 @@ html, body {
   text-shadow: .25px .25px 0 #fff
 }
 
-/* Add a '~ ' before each link */
 .sidebar-links a::before {
   content: '~ ';
   color: #fff;
@@ -153,14 +144,13 @@ html, body {
 }
 
 .hero-title {
-  font-family: 'Orbitron', sans-serif; /* The hero title uses the glitch effect below */
+  font-family: 'Orbitron', sans-serif;
   font-size: 3.7rem;
   color: #ff3d3d;
   margin-bottom: 10px;
   text-shadow: 2px 2px #000;
 }
 
-/* Keep the glitch effect for the hero title and other headings */
 .portfolio-glitch {
   position: relative;
   display: inline-block;
@@ -216,14 +206,12 @@ html, body {
 
 /* ==================== SECTION TITLES ==================== */
 .section-title {
-  /* Use the VT323 font and make it bigger */
   font-family: 'VT323', monospace;
   font-size: 3.4em;
   color: #b30000;
   text-align: center;
   margin-bottom: 20px;
 
-  /* Graffiti-like whitish-grey shadow (not too glowy) */
   text-shadow: 2px 2px 0 #fff;
 }
 
@@ -487,7 +475,7 @@ html, body {
   padding: 20px;
   max-width: 40%;
   text-align: left;
-  background: #000; /* pure black background */
+  background: #000; 
   border: 2px solid #555;
   border-radius: 6px;
 }
@@ -636,16 +624,10 @@ html, body {
   font-size: 0.9em;
 }
 
-/* ==================== DARK MODE OVERRIDES ==================== */
-/* Wrap all overrides under .dark-mode, which we toggle on the main container */
-/* ==================== EXTENDED DARK MODE OVERRIDES ==================== */
 
-/* ==================== SUPER-EXTENDED DARK MODE OVERRIDES ==================== */
 
-/* 
-  We'll assume the .dark-mode class is placed on a parent element 
-  (e.g., <body> or a main <div>), so all children inherit these overrides.
-*/
+/* ====================  DARK MODE OVERRIDES ==================== */
+
 
 /* ---------- Global Inversion & Base Tweaks ---------- */
 .dark-mode html,
@@ -680,27 +662,23 @@ html, body {
   color: #222 !important;
 }
 
-/* ----- Let's define some pastel or contrasting “accent” colors to use ----- */
+/* ----- define some pastel or contrasting “accent” colors to use ----- */
 :root {
   --dark-mode-accent1: #ff3d3d;   /* Keep some red accent for edges */
   --dark-mode-accent2: #00c0ff;   /* Light turquoise for highlight */
-  --dark-mode-accent3: #4d4dff;   /* Orange highlight for headings */
+  --dark-mode-accent3: #4d4dff;   /* blue highlight for headings */
   --dark-mode-accent4: #d22aff;   /* Purple highlight for glitch text */
   --dark-mode-border1: #003c3c;   /* Dark teal border color */
 }
 
 /* ---------- SIDEBAR & BUTTONS ---------- */
 .dark-mode .sidebar {
-  /* Invert from the original dark gray gradient to a light gradient */
   background: linear-gradient(135deg, #f1f1f1, #efefef) !important;
   border: 4px solid var(--dark-mode-border1) !important;
   box-shadow: 0 0 12px rgba(0, 0, 0, 0.15);
 }
 
-/* 
-  Lower the dark mode toggle to avoid overlap,
-  tweak colors to ensure high contrast 
-*/
+
 .dark-mode .dark-mode-toggle-btn {
   margin-top: 1.5rem;
   margin-bottom: 1rem;
@@ -740,21 +718,18 @@ html, body {
 
 /* ---------- HERO SECTION ---------- */
 .dark-mode .hero-section {
-  /* Invert the dark gradient to a lighter gradient */
   background: linear-gradient(45deg, #ececec, #f9f9f9) !important;
   color: #222 !important;
   box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.05);
 }
 
 .dark-mode .hero-title {
-  color: var(--dark-mode-accent3) !important; /* Orange highlight for hero title */
+  color: var(--dark-mode-accent3) !important; 
   text-shadow: 3px 3px #000 !important;
   position: relative;
 }
 
-/* 
-  Create a more “crazy” glitch for dark mode to differentiate from normal mode 
-*/
+
 .dark-mode .portfolio-glitch {
   animation: darkModeGlitch 3s infinite;
 }
@@ -791,7 +766,7 @@ html, body {
 
 /* ---------- SECTION TITLES ---------- */
 .dark-mode .section-title {
-  color: var(--dark-mode-accent3) !important; /* Orange stands out on light background */
+  color: var(--dark-mode-accent3) !important; 
   text-shadow: 2px 2px #000 !important;
 }
 
@@ -820,7 +795,7 @@ html, body {
   filter: brightness(1.1);
 }
 .dark-mode .project-info h3 {
-  color: var(--dark-mode-accent1) !important; /* Red accent for project titles */
+  color: var(--dark-mode-accent1) !important;
 }
 .dark-mode .project-info p {
   color: #444 !important;
@@ -863,7 +838,7 @@ html, body {
   border: 2px solid #00a3a3 !important; /* Slightly lighter teal border */
 }
 .dark-mode .skills-header {
-  color: var(--dark-mode-accent3) !important; /* Orange for skill headers */
+  color: var(--dark-mode-accent3) !important;
 }
 .dark-mode .skill-card {
   background-color: #fafafa !important;
@@ -941,7 +916,7 @@ html, body {
   color: #222 !important;
 }
 .dark-mode .prompt-root {
-  color: var(--dark-mode-accent1) !important;  /* Keep a red accent for the prompt */
+  color: var(--dark-mode-accent1) !important;  
 }
 .dark-mode .prompt-at {
   color: #0066dd !important; /* Blue for '@' */
@@ -979,7 +954,7 @@ html, body {
   color: #444 !important;
 }
 .dark-mode .accent-text {
-  color: var(--dark-mode-accent1) !important; /* Red accent for emphasis */
+  color: var(--dark-mode-accent1) !important; 
 }
 .dark-mode .accent-link {
   color: var(--dark-mode-accent2) !important;
@@ -1014,7 +989,7 @@ html, body {
 
 /* ---------- Extra Touches for Interactivity & Contrast ---------- */
 
-/* Inverted button styles with a bit more highlight on hover */
+
 .dark-mode button,
 .dark-mode .btn {
   background-color: #fafafa !important;
@@ -1029,7 +1004,7 @@ html, body {
   transform: translateY(-1px);
 }
 
-/* Subtle text-shadow for headings in dark-mode to ensure clarity */
+
 .dark-mode .hero-title,
 .dark-mode .section-title,
 .dark-mode .skills-header,
@@ -1038,7 +1013,6 @@ html, body {
   text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.7) !important;
 }
 
-/* Make sure general paragraph text has enough contrast vs. background */
 .dark-mode p {
   color: #333 !important;
 }
@@ -1046,9 +1020,7 @@ html, body {
 /* ===================== END SUPER-EXTENDED DARK MODE OVERRIDES ===================== */
 /* =========================================
    RESPONSIVENESS FOR SMALL SCREENS
-   (add near the bottom of your CSS file)
-   ========================================= */
-
+ 
 /* Medium devices and smaller (tablets, small desktops) */
 @media (max-width: 768px) {
   /* Hero title and subtitle slightly smaller */
@@ -1102,18 +1074,11 @@ html, body {
   }
 }
 
-/*
-  iOS Safari often ignores background-attachment: fixed,
-  so we conditionally remove the original background
-  and re-apply it via a pseudo-element.
-  This ensures the “fixed” effect on iPhones & iPads
-  without messing up normal screens.
-*/
 
 @supports (-webkit-overflow-scrolling: touch) {
   /* This @supports rule is recognized by iOS Safari */
 
-  /* Remove your normal background for iOS only */
+  
   html, body {
     background: none !important;
   }
