@@ -1,4 +1,3 @@
-
 /* ==================== GENERAL RESET ==================== */
 * {
   box-sizing: border-box;
@@ -6,13 +5,30 @@
   padding: 0;
 }
 
+/* 
+  Make the entire page background use the image "portfoliobackround.jpg",
+  fixed in place, and add a faint overlay to darken it slightly.
+*/
+html, body {
+  height: 100%;
+  background: linear-gradient(
+      rgba(0, 0, 0, 0.5),
+      rgba(0, 0, 0, 0.5)
+    ),
+    url("portfoliobackround.jpg") no-repeat center center fixed;
+  background-size: cover;
+  font-family: 'Roboto', sans-serif;
+  color: #fff; /* default text color so it's visible on dark background */
+}
+
+/* The main container is transparent so the background image shows through */
 .portfolio-container {
-  background: #transparent;
+  background: transparent;
   color: #fff;
   min-height: 100vh;
   font-family: 'Roboto', sans-serif;
   padding-bottom: 50px;
-  position: relative; 
+  position: relative;
 }
 
 /* ==================== SIDEBAR ==================== */
@@ -82,7 +98,7 @@
 
 @media (min-width: 768px) {
   .portfolio-container {
-    padding-left: 0; 
+    padding-left: 0;
   }
 }
 
@@ -456,15 +472,6 @@
   word-wrap: break-word;
 }
 
-/* Prompt Colors: 
-    root -> red (#ff3d3d)
-    @ -> blue (#00f or something close)
-    : -> white (#fff)
-    /Carter -> purple (#800080)
-    # -> let's keep white or green (#00ff5?)
-    For user text -> white
-    For assistant text -> white
-*/
 .prompt-root {
   color: #ff3d3d;  /* red */
 }
