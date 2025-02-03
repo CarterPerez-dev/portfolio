@@ -1044,4 +1044,92 @@ html, body {
 }
 
 /* ===================== END SUPER-EXTENDED DARK MODE OVERRIDES ===================== */
+/* =========================================
+   RESPONSIVENESS FOR SMALL SCREENS
+   (add near the bottom of your CSS file)
+   ========================================= */
+
+/* Medium devices and smaller (tablets, small desktops) */
+@media (max-width: 768px) {
+  /* Hero title and subtitle slightly smaller */
+  .hero-title {
+    font-size: 2.6rem;
+  }
+  .hero-subtitle {
+    font-size: 1rem;
+  }
+
+  /* Profile pic slightly smaller */
+  .profile-pic {
+    width: 150px;
+    height: 150px;
+  }
+
+  /* Sidebar takes up less width on smaller screens */
+  .sidebar {
+    width: 70vw;
+    margin-top: 0;
+  }
+
+  .sidebar-links a {
+    font-size: 1.2rem;
+  }
+}
+
+/* Small devices (phones) */
+@media (max-width: 480px) {
+  /* Further scale down hero title and subtitle */
+  .hero-title {
+    font-size: 2rem;
+  }
+  .hero-subtitle {
+    font-size: 0.9rem;
+  }
+
+  /* Make the profile pic a bit smaller for small phones */
+  .profile-pic {
+    width: 120px;
+    height: 120px;
+  }
+
+  /* Sidebar to nearly full width for very small screens */
+  .sidebar {
+    width: 80vw;
+  }
+
+  .sidebar-links a {
+    font-size: 1.1rem;
+  }
+}
+
+/*
+  iOS Safari often ignores background-attachment: fixed,
+  so we conditionally remove the original background
+  and re-apply it via a pseudo-element.
+  This ensures the “fixed” effect on iPhones & iPads
+  without messing up normal screens.
+*/
+
+@supports (-webkit-overflow-scrolling: touch) {
+  /* This @supports rule is recognized by iOS Safari */
+
+  /* Remove your normal background for iOS only */
+  html, body {
+    background: none !important;
+  }
+
+  /* Apply the same image + overlay via a pseudo-element */
+  body::before {
+    content: "";
+    position: fixed;
+    top: 0; right: 0; bottom: 0; left: 0;
+    background: linear-gradient(
+        rgba(0, 0, 0, 0.5),
+        rgba(0, 0, 0, 0.5)
+      ),
+      url("portfoliobackround.jpg") center center no-repeat;
+    background-size: cover;
+    z-index: -9999; /* Place behind everything else */
+  }
+}
 
