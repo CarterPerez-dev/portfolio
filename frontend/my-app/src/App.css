@@ -73,6 +73,26 @@ html, body {
   color: #000;
 }
 
+/* Dark Mode toggle button in the sidebar */
+.dark-mode-toggle-btn {
+  margin-bottom: 1rem;
+  background-color: #00fff5;
+  border: 2px solid #fff; 
+  color: #000;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 0.9em;
+  padding: 11px 15px;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s, color 0.3s;
+  margin-top: 1rem;
+}
+
+.dark-mode-toggle-btn:hover {
+  background-color: #ff3d3d;
+  color: #fff;
+}
+
 /* Center the links vertically and adjust text style */
 .sidebar-links {
   list-style-type: none;
@@ -92,11 +112,12 @@ html, body {
   /* Darkish red but not too dark */
   color: #b30000;
   text-decoration: none;
-  font-size: 1.1em;
+  font-size: 1.4rem;
   font-weight: bold; /* bolder text */
   border-bottom: 1px dotted transparent;
   transition: color 0.3s, border-color 0.3s;
   position: relative;
+  text-shadow: .25px .25px 0 #fff
 }
 
 /* Add a '~ ' before each link */
@@ -614,3 +635,413 @@ html, body {
   color: #666;
   font-size: 0.9em;
 }
+
+/* ==================== DARK MODE OVERRIDES ==================== */
+/* Wrap all overrides under .dark-mode, which we toggle on the main container */
+/* ==================== EXTENDED DARK MODE OVERRIDES ==================== */
+
+/* ==================== SUPER-EXTENDED DARK MODE OVERRIDES ==================== */
+
+/* 
+  We'll assume the .dark-mode class is placed on a parent element 
+  (e.g., <body> or a main <div>), so all children inherit these overrides.
+*/
+
+/* ---------- Global Inversion & Base Tweaks ---------- */
+.dark-mode html,
+.dark-mode body {
+  /* 
+    Keep the background image but use a lighter overlay. 
+    This ensures the original dark overlay is inverted to a lighter one. 
+  */
+  background: linear-gradient(
+      rgba(255, 255, 255, 0.6),
+      rgba(255, 255, 255, 0.6)
+    ),
+    url("portfoliobackround.jpg") no-repeat center center fixed !important;
+  background-size: cover;
+  /* High contrast text color (dark gray instead of pure black for comfort) */
+  color: #222 !important;
+  transition: background 0.5s, color 0.5s;
+}
+
+.dark-mode * {
+  /* Smooth transitions for all children */
+  transition:
+    background-color 0.5s ease,
+    color 0.5s ease,
+    border-color 0.5s ease,
+    box-shadow 0.5s ease;
+}
+
+.dark-mode .portfolio-container {
+  /* Transparent to let the new overlay show through */
+  background: transparent !important;
+  color: #222 !important;
+}
+
+/* ----- Let's define some pastel or contrasting “accent” colors to use ----- */
+:root {
+  --dark-mode-accent1: #ff3d3d;   /* Keep some red accent for edges */
+  --dark-mode-accent2: #00c0ff;   /* Light turquoise for highlight */
+  --dark-mode-accent3: #4d4dff;   /* Orange highlight for headings */
+  --dark-mode-accent4: #d22aff;   /* Purple highlight for glitch text */
+  --dark-mode-border1: #003c3c;   /* Dark teal border color */
+}
+
+/* ---------- SIDEBAR & BUTTONS ---------- */
+.dark-mode .sidebar {
+  /* Invert from the original dark gray gradient to a light gradient */
+  background: linear-gradient(135deg, #f1f1f1, #efefef) !important;
+  border: 4px solid var(--dark-mode-border1) !important;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.15);
+}
+
+/* 
+  Lower the dark mode toggle to avoid overlap,
+  tweak colors to ensure high contrast 
+*/
+.dark-mode .dark-mode-toggle-btn {
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+  background-color: var(--dark-mode-accent1) !important; /* Red accent */
+  border: 2px solid #222 !important;
+  color: #fff !important;
+  box-shadow: 0 0 6px rgba(255, 61, 61, 0.3);
+}
+.dark-mode .dark-mode-toggle-btn:hover {
+  background-color: var(--dark-mode-accent2) !important; 
+  color: #000 !important;
+  transform: scale(1.06);
+}
+
+.dark-mode .sidebar-toggle-fixed {
+  background-color: var(--dark-mode-accent2) !important; 
+  border: 2px solid #222 !important;
+  color: #000 !important;
+}
+.dark-mode .sidebar-toggle-fixed:hover {
+  background-color: var(--dark-mode-accent1) !important;
+  color: #fff !important;
+}
+
+/* ---------- SIDEBAR LINKS ---------- */
+.dark-mode .sidebar-links a {
+  color: #005555 !important; /* Dark teal text for sidebar links */
+  text-shadow: 0.25px 0.25px 0 #fff !important;
+}
+.dark-mode .sidebar-links a::before {
+  color: #222 !important; /* Tilde prefix in darker color */
+}
+.dark-mode .sidebar-links a:hover {
+  color: var(--dark-mode-accent1) !important; /* Red accent on hover */
+  border-color: var(--dark-mode-accent1) !important;
+}
+
+/* ---------- HERO SECTION ---------- */
+.dark-mode .hero-section {
+  /* Invert the dark gradient to a lighter gradient */
+  background: linear-gradient(45deg, #ececec, #f9f9f9) !important;
+  color: #222 !important;
+  box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.05);
+}
+
+.dark-mode .hero-title {
+  color: var(--dark-mode-accent3) !important; /* Orange highlight for hero title */
+  text-shadow: 3px 3px #000 !important;
+  position: relative;
+}
+
+/* 
+  Create a more “crazy” glitch for dark mode to differentiate from normal mode 
+*/
+.dark-mode .portfolio-glitch {
+  animation: darkModeGlitch 3s infinite;
+}
+@keyframes darkModeGlitch {
+  0%, 20%, 40%, 60%, 100% {
+    text-shadow: 1px 1px var(--dark-mode-accent2), -1px -1px var(--dark-mode-accent4);
+  }
+  10% {
+    text-shadow: 2px 2px var(--dark-mode-accent1);
+  }
+  30% {
+    text-shadow: -3px 0px #00ff9f;
+  }
+  50% {
+    text-shadow: 3px -3px #ffaaff;
+  }
+  70% {
+    text-shadow: -2px 2px #ffcc00;
+  }
+  90% {
+    text-shadow: 4px 4px #8f00ff;
+  }
+}
+
+.dark-mode .hero-subtitle {
+  color: #4d4dff !important;
+  text-shadow: 1px 1px #fff;
+}
+
+.dark-mode .profile-pic {
+  border: 3px solid var(--dark-mode-border1) !important;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2) !important;
+}
+
+/* ---------- SECTION TITLES ---------- */
+.dark-mode .section-title {
+  color: var(--dark-mode-accent3) !important; /* Orange stands out on light background */
+  text-shadow: 2px 2px #000 !important;
+}
+
+/* ---------- ABOUT WORK ---------- */
+.dark-mode .about-work {
+  color: #222 !important;
+}
+.dark-mode .about-work .work-details p {
+  color: #333 !important;
+  background-color: #f9f9f9;
+  padding: 8px;
+  border-radius: 4px;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.05);
+}
+
+/* ---------- PROJECTS SECTION ---------- */
+.dark-mode .projects-section {
+  color: #4d4dff !important;
+}
+.dark-mode .project-card {
+  background: #fafafa !important;
+  border: 2px solid var(--dark-mode-border1) !important;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+}
+.dark-mode .project-image {
+  filter: brightness(1.1);
+}
+.dark-mode .project-info h3 {
+  color: var(--dark-mode-accent1) !important; /* Red accent for project titles */
+}
+.dark-mode .project-info p {
+  color: #444 !important;
+}
+.dark-mode .pulse-hover:hover {
+  animation: pulse 1s infinite;
+}
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.02);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* ---------- CERTIFICATIONS ---------- */
+.dark-mode .certifications-section {
+  color: #4d4dff !important;
+}
+.dark-mode .cert-card {
+  background: #f3f3f3 !important;
+  border: 2px solid var(--dark-mode-border1) !important;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
+}
+.dark-mode .cert-image {
+  border: 2px solid var(--dark-mode-border1) !important;
+  filter: brightness(1.05);
+}
+
+/* ---------- SKILLS SECTION ---------- */
+.dark-mode .skills-section {
+  color: #4d4dff !important;
+}
+.dark-mode .skills-column {
+  background-color: #f3f3f3 !important;
+  border: 2px solid #00a3a3 !important; /* Slightly lighter teal border */
+}
+.dark-mode .skills-header {
+  color: var(--dark-mode-accent3) !important; /* Orange for skill headers */
+}
+.dark-mode .skill-card {
+  background-color: #fafafa !important;
+  color: var(--dark-mode-border1) !important; 
+  border: 1px solid #ccc;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+.dark-mode .skill-card:hover {
+  background-color: var(--dark-mode-accent2) !important; /* Turquoise pop */
+  color: #000 !important;
+}
+
+/* ---------- BLOG SECTION ---------- */
+.dark-mode .blog-section {
+  color: #4d4dff !important;
+}
+.dark-mode .blog-post {
+  background: #f3f3f3 !important;
+  border: 2px solid var(--dark-mode-border1) !important;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
+}
+.dark-mode .blog-post h3 {
+  color: var(--dark-mode-accent1) !important;
+}
+.dark-mode .blog-post p {
+  color: #444 !important;
+}
+.dark-mode .blog-link {
+  color: var(--dark-mode-accent2) !important;
+  border: 1px solid var(--dark-mode-accent2) !important;
+  background-color: #fff;
+}
+.dark-mode .blog-link:hover {
+  background-color: var(--dark-mode-accent2) !important;
+  color: #000 !important;
+}
+.dark-mode .tilt-hover:hover {
+  transform: rotate(1deg) scale(1.02) !important;
+  transition: transform 0.3s !important;
+}
+
+/* ---------- RESUME SECTION ---------- */
+.dark-mode .resume-section {
+  color: #4d4dff !important;
+}
+.dark-mode .resume-info {
+  background: #f3f3f3 !important;
+  border: 2px solid var(--dark-mode-border1) !important;
+  box-shadow: 0 2px 5px #000;
+}
+.dark-mode .resume-info p {
+  color: #333 !important;
+}
+.dark-mode .resume-link {
+  color: var(--dark-mode-accent2) !important;
+  border: 2px solid var(--dark-mode-accent2) !important;
+}
+.dark-mode .resume-link:hover {
+  background-color: var(--dark-mode-accent2) !important;
+  color: #000 !important;
+}
+
+/* ---------- TERMINAL-STYLE CHAT SECTION ---------- */
+.dark-mode .terminal-section {
+  background: #fff !important;
+  border: 2px solid #ccc !important;
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.05);
+}
+.dark-mode .terminal-window {
+  background-color: #fff !important;
+  color: #4d4dff !important;
+  box-shadow: inset 0 0 10px #000 !important;
+}
+.dark-mode .terminal-line {
+  color: #222 !important;
+}
+.dark-mode .prompt-root {
+  color: var(--dark-mode-accent1) !important;  /* Keep a red accent for the prompt */
+}
+.dark-mode .prompt-at {
+  color: #0066dd !important; /* Blue for '@' */
+}
+.dark-mode .prompt-colon {
+  color: #222 !important;
+}
+.dark-mode .prompt-carter {
+  color: #8800aa !important; /* Purple name */
+}
+.dark-mode .prompt-hash {
+  color: #222 !important;
+}
+.dark-mode .terminal-user-text,
+.dark-mode .terminal-output {
+  color: #222 !important;
+}
+.dark-mode .blinking-cursor {
+  color: #222 !important;
+}
+.dark-mode .terminal-input {
+  background: #fff !important;
+  color: #222 !important;
+}
+.dark-mode .terminal-input::placeholder {
+  color: #999 !important;
+}
+
+/* ---------- CONTACT & SOCIALS SECTION ---------- */
+.dark-mode .contact-social-section {
+  background: #fff !important;
+  color: #222 !important;
+}
+.dark-mode .contact-info p {
+  color: #444 !important;
+}
+.dark-mode .accent-text {
+  color: var(--dark-mode-accent1) !important; /* Red accent for emphasis */
+}
+.dark-mode .accent-link {
+  color: var(--dark-mode-accent2) !important;
+  border-bottom: 1px dotted var(--dark-mode-accent2) !important;
+}
+.dark-mode .accent-link:hover {
+  text-decoration: underline !important;
+}
+.dark-mode .social-links {
+  color: #222 !important;
+}
+.dark-mode .social-icon {
+  background: #f3f3f3 !important;
+  border: 2px solid var(--dark-mode-border1) !important;
+  color: var(--dark-mode-border1) !important;
+}
+.dark-mode .social-icon:hover {
+  background-color: var(--dark-mode-border1) !important;
+  color: #fff !important;
+  transform: scale(1.05);
+}
+
+/* ---------- FOOTER ---------- */
+.dark-mode .portfolio-footer {
+  background: #ffffff !important;
+  border-top: 2px solid var(--dark-mode-border1) !important;
+  box-shadow: inset 0 8px 12px rgba(0, 0, 0, 0.02);
+}
+.dark-mode .portfolio-footer p {
+  color: #777 !important;
+}
+
+/* ---------- Extra Touches for Interactivity & Contrast ---------- */
+
+/* Inverted button styles with a bit more highlight on hover */
+.dark-mode button,
+.dark-mode .btn {
+  background-color: #fafafa !important;
+  color: #222 !important;
+  border: 1px solid var(--dark-mode-border1) !important;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+.dark-mode button:hover,
+.dark-mode .btn:hover {
+  background-color: var(--dark-mode-accent2) !important; 
+  color: #000 !important;
+  transform: translateY(-1px);
+}
+
+/* Subtle text-shadow for headings in dark-mode to ensure clarity */
+.dark-mode .hero-title,
+.dark-mode .section-title,
+.dark-mode .skills-header,
+.dark-mode .blog-post h3,
+.dark-mode .resume-info p {
+  text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.7) !important;
+}
+
+/* Make sure general paragraph text has enough contrast vs. background */
+.dark-mode p {
+  color: #333 !important;
+}
+
+/* ===================== END SUPER-EXTENDED DARK MODE OVERRIDES ===================== */
+

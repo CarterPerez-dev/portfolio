@@ -78,3 +78,128 @@ import@("https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=
     font-size: 1.8em;
   }
 }
+
+/*********************************************
+ *       EXTENDED DARK MODE OVERRIDES
+ *        for ExperienceTimeline.css
+ *********************************************/
+
+/*
+  We'll assume that toggling "dark mode" adds a ".dark-mode" class
+  somewhere that wraps or contains the .experience-timeline-container, etc.
+*/
+
+/* Define some accent variables for consistency (adjust as needed) */
+:root {
+  --dark-timeline-bg: #f7f7f7;           /* Lighter background in "inverted" dark mode */
+  --dark-timeline-text: #202020;         /* Dark text for easy reading */
+  --dark-timeline-border: #00b3b3;       /* Inverted accent border color */
+  --dark-timeline-accent1: #ff3d3d;      /* Keep some red accent */
+  --dark-timeline-accent2: #00fff5;      /* Cyan or turquoise accent */
+  --dark-timeline-form-bg: #ededed;      /* Form background in dark mode */
+}
+
+.dark-mode .experience-timeline-container {
+  border-radius: 8px;
+  /* Invert text color from light to dark */
+  color: #4d4dff !important;
+  transition: background-color 0.5s, color 0.5s;
+}
+
+.dark-mode .timeline-heading {
+  color: #4d4dff !important; /* Keep red for heading, but invert text shadow if needed */
+  text-shadow: 1px 1px #fff; /* you can change to #000 or a different color if you prefer */
+}
+
+.dark-mode .vertical-timeline-element--work,
+.dark-mode .vertical-timeline-element--education {
+  /* Example: subtle background highlight or border if desired */
+  border-left: #4d4dff !important;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  padding: 15px;
+  border-radius: 4px;
+  margin-bottom: 20px;
+  transition: background-color 0.5s, border-color 0.5s;
+}
+
+.dark-mode .vertical-timeline-element-title {
+  color: #4d4dff !important; /* red for titles */
+  font-size: 1.4rem;
+  margin-bottom: 5px;
+  text-shadow: 1px 1px #fff;
+}
+
+.dark-mode .vertical-timeline-element-description {
+  color: #fff !important; /* ensure it’s not too light */
+  font-size: 0.95rem;
+  line-height: 1.4em;
+}
+
+/* ---------- Images in Timeline ---------- */
+.dark-mode .timeline-image-container img {
+  border: 2px solid var(--dark-timeline-border) !important;
+  /* Slight brightness for images if you want them a bit “lighter” in “light mode” */
+  filter: brightness(1.05);
+  transition: filter 0.5s, border-color 0.5s;
+}
+
+/* ---------- The "Add New Timeline Item" Form ---------- */
+.dark-mode .add-timeline-item-form {
+  background-color: #ccccff !important;
+  border: 2px solid var(--dark-timeline-border) !important;
+  padding: 20px;
+  border-radius: 8px;
+  transition: background-color 0.5s, border-color 0.5s;
+}
+
+.dark-mode .add-timeline-item-form h3 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: var(--dark-timeline-accent1) !important;
+  text-shadow: 1px 1px #fff;
+}
+
+.dark-mode .add-timeline-item-form input,
+.dark-mode .add-timeline-item-form textarea {
+  /* Make form fields contrast nicely */
+  background-color: #fff !important;
+  color: var(--dark-timeline-text) !important;
+  border: 1px solid #bbb !important;
+  transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+}
+
+.dark-mode .add-timeline-item-form button {
+  background-color: var(--dark-timeline-accent1) !important;
+  color: #fff !important;
+  border: 1px solid #fff;
+  transition: background-color 0.3s, transform 0.3s;
+}
+.dark-mode .add-timeline-item-form button:hover {
+  background-color: var(--dark-timeline-accent2) !important;
+  color: #000 !important;
+  transform: translateY(-1px);
+}
+
+/* ---------- Responsiveness in Dark Mode ---------- */
+@media (max-width: 768px) {
+  .dark-mode .experience-timeline-container {
+    padding: 20px 10px;
+  }
+
+  .dark-mode .timeline-heading {
+    font-size: 1.8em;
+  }
+}
+
+/*
+ * Optionally, add a global transition for all elements in .experience-timeline-container
+ * if you want an even smoother mode toggle:
+ */
+.dark-mode .experience-timeline-container * {
+  transition:
+    background-color 0.5s ease,
+    color 0.5s ease,
+    border-color 0.5s ease,
+    box-shadow 0.5s ease;
+}
+

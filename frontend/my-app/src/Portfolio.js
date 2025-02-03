@@ -69,6 +69,12 @@ function Portfolio() {
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const handleToggleSidebar = () => setSidebarOpen(!sidebarOpen);
 
+  // ==================== DARK MODE TOGGLE ====================
+  const [darkMode, setDarkMode] = useState(false);
+  const handleDarkModeToggle = () => {
+    setDarkMode((prev) => !prev);
+  };
+
   // ==================== TERMINAL-STYLE CHAT (ASK ME ANYTHING) ====================
   const [messages, setMessages] = useState([]);
   const [userInput, setUserInput] = useState('');
@@ -162,7 +168,7 @@ function Portfolio() {
   }, [messages]);
 
   return (
-    <div className="portfolio-container">
+    <div className={`portfolio-container ${darkMode ? 'dark-mode' : ''}`}>
       {/* SIDEBAR TOGGLE BUTTON */}
       <button className="sidebar-toggle-fixed" onClick={handleToggleSidebar}>
         {sidebarOpen ? 'CLOSE' : 'NAVIGATION'}
@@ -170,6 +176,11 @@ function Portfolio() {
 
       {/* SIDEBAR */}
       <div className={`sidebar ${sidebarOpen ? 'open' : ''}`}>
+        {/* Dark Mode Toggle Button */}
+        <button className="dark-mode-toggle-btn" onClick={handleDarkModeToggle}>
+          {darkMode ? 'Light Mode' : 'Dark Mode'}
+        </button>
+
         <ul className="sidebar-links">
           <li><a href="#askme" onClick={() => setSidebarOpen(false)}>Terminal</a></li>
           <li><a href="#projects" onClick={() => setSidebarOpen(false)}>Projects</a></li>
@@ -620,3 +631,4 @@ function Portfolio() {
 }
 
 export default Portfolio;
+
