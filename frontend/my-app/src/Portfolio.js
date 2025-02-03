@@ -53,7 +53,6 @@ import Project2Img from './project2.jpg';
 import Resume from './CarterPerez.pdf';
 
 // Data Visualization & Timeline components
-import ChartsDashboard from './ChartsDashboard';
 import ExperienceTimeline from './ExperienceTimeline';
 
 function Portfolio() {
@@ -406,87 +405,87 @@ function Portfolio() {
         <div className="skills-grid">
           <div className="skills-column">
             <h3 className="skills-header">
-              <FaUsers style={{ marginRight: '5px' }} /> Interpersonal
+              <FaUsers style={{ color: '#17a2b8', marginRight: '5px' }} /> Interpersonal
             </h3>
             <div className="skill-card">
-              <FaUserFriends /> Team Player
+              <FaUserFriends style={{ color: '#4CAF50' }} /> Team Player
             </div>
             <div className="skill-card">
-              <FaUserTie /> Leader
+              <FaUserTie style={{ color: '#9C27B0' }} /> Leader
             </div>
             <div className="skill-card">
-              <FaHammer /> Hard Worker
+              <FaHammer style={{ color: '#795548' }} /> Hard Worker
             </div>
             <div className="skill-card">
-              <FaHeadset /> Customer Service
+              <FaHeadset style={{ color: '#FF5722' }} /> Customer Service
             </div>
             <div className="skill-card">
-              <FaEye /> Attention to Detail
+              <FaEye style={{ color: '#009688' }} /> Attention to Detail
             </div>
             <div className="skill-card">
-              <FaPuzzlePiece /> Flexible
+              <FaPuzzlePiece style={{ color: '#FFC107' }} /> Flexible
             </div>
             <div className="skill-card">
-              <FaUserCheck /> Honesty
+              <FaUserCheck style={{ color: '#3F51B5' }} /> Honesty
             </div>
           </div>
           <div className="skills-column">
             <h3 className="skills-header">
-              <FaTasks style={{ marginRight: '5px' }} /> Functional
+              <FaTasks style={{ color: '#607D8B', marginRight: '5px' }} /> Functional
             </h3>
             <div className="skill-card">
-              <FaShieldAlt /> Compliance
+              <FaShieldAlt style={{ color: '#2E86C1' }} /> Compliance
             </div>
             <div className="skill-card">
-              <FaExclamationTriangle /> Risk Management
+              <FaExclamationTriangle style={{ color: '#FFC107' }} /> Risk Management
             </div>
             <div className="skill-card">
-              <FaUserSecret /> Cyber Analyst
+              <FaUserSecret style={{ color: '#000000' }} /> Cyber Analyst
             </div>
             <div className="skill-card">
-              <FaCodeBranch /> DevOps
+              <FaCodeBranch style={{ color: '#28a745' }} /> DevOps
             </div>
           </div>
           <div className="skills-column">
             <h3 className="skills-header">Technical</h3>
             <div className="skill-card">
-              <SiPython /> Python
+              <SiPython style={{ color: '#3776AB' }} /> Python
             </div>
             <div className="skill-card">
-              <SiJavascript /> JavaScript
+              <SiJavascript style={{ color: '#F7DF1E' }} /> JavaScript
             </div>
             <div className="skill-card">
-              <SiDocker /> Docker
+              <SiDocker style={{ color: '#2496ED' }} /> Docker
             </div>
             <div className="skill-card">
-              <SiReact /> React
+              <SiReact style={{ color: '#61DAFB' }} /> React
             </div>
             <div className="skill-card">
-              <SiLinux /> Linux
+              <SiLinux style={{ color: '#FCC624' }} /> Linux
             </div>
             <div className="skill-card">
-              <SiAmazonwebservices /> AWS
+              <SiAmazonwebservices style={{ color: '#FF9900' }} /> AWS
             </div>
             <div className="skill-card">
-              <SiMongodb /> MongoDB
+              <SiMongodb style={{ color: '#47A248' }} /> MongoDB
             </div>
             <div className="skill-card">
-              <SiNodedotjs /> Node.js
+              <SiNodedotjs style={{ color: '#339933' }} /> Node.js
             </div>
             <div className="skill-card">
-              <SiFlask /> Flask
+              <SiFlask style={{ color: '#000000' }} /> Flask
             </div>
             <div className="skill-card">
-              <SiNginx /> Nginx
+              <SiNginx style={{ color: '#009639' }} /> Nginx
             </div>
             <div className="skill-card">
-              <SiApache /> Apache
+              <SiApache style={{ color: '#D22128' }} /> Apache
             </div>
             <div className="skill-card">
-              <SiGnubash /> Bash
+              <SiGnubash style={{ color: '#4EAA25' }} /> Bash
             </div>
             <div className="skill-card">
-              <SiOpenai /> OpenAI
+              <SiOpenai style={{ color: '#412991' }} /> OpenAI
             </div>
           </div>
         </div>
@@ -499,7 +498,7 @@ function Portfolio() {
         id="blog"
         style={{ scrollMarginTop: '80px' }}
       >
-        <h2 className="section-title">My Blog</h2>
+        <h2 className="section-title">My Blogs</h2>
         <div className="blog-list">
           <div className="blog-post tilt-hover">
             <h3>Building Custom Solutions with Quality at the Core</h3>
@@ -523,7 +522,17 @@ function Portfolio() {
           </div>
           <div className="blog-post tilt-hover">
             <h3>How My Career Growth Led to Enhancing Customer Experience</h3>
-            <p> This blog post outlines my journey of professional and personal growth as an Integration Technician at SealingTech. It delves into how pursuing industry certifications has not only sharpened my technical skills but also reshaped my approach to real-world challenges. From preparing for rigorous exams to applying newfound knowledge in day-to-day operations, the post details the practical steps and insights that have driven my evolution. Additionally, I explore the impact of building a personal website project, which reinforced my commitment to continuous learning and innovative problem-solving in a rapidly changing cybersecurity landscape</p>
+            <p>
+              This blog post outlines my journey of professional and personal growth as an
+              Integration Technician at SealingTech. It delves into how pursuing industry
+              certifications has not only sharpened my technical skills but also reshaped
+              my approach to real-world challenges. From preparing for rigorous exams to
+              applying newfound knowledge in day-to-day operations, the post details the
+              practical steps and insights that have driven my evolution. Additionally, I
+              explore the impact of building a personal website project, which reinforced
+              my commitment to continuous learning and innovative problem-solving in a
+              rapidly changing cybersecurity landscape
+            </p>
             <a
               href="https://www.sealingtech.com/2025/02/03/how-my-career-growth-led-to-enhancing-customer-experience/"
               target="_blank"
@@ -534,11 +543,6 @@ function Portfolio() {
             </a>
           </div>
         </div>
-      </section>
-
-      {/* CHARTS DASHBOARD */}
-      <section className="fade-in" data-aos="fade-up" style={{ scrollMarginTop: '80px' }}>
-        <ChartsDashboard />
       </section>
 
       {/* RESUME SECTION */}

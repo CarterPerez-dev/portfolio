@@ -1,9 +1,5 @@
-/* ==================== GENERAL RESET ==================== */
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
+/* 1) Import the VT323 font at the very top */
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
 
 /* 
   Make the entire page background use the image "portfoliobackround.jpg",
@@ -19,6 +15,7 @@ html, body {
   background-size: cover;
   font-family: 'Roboto', sans-serif;
   color: #fff; /* default text color so it's visible on dark background */
+  overflow-x: hidden;
 }
 
 /* The main container is transparent so the background image shows through */
@@ -33,30 +30,33 @@ html, body {
 
 /* ==================== SIDEBAR ==================== */
 .sidebar {
-  margin-top: 20px;
+  /* use the same gradient background as the hero section */
+  background: linear-gradient(135deg, #0e0e0e, #1a1a1a);
+  border-radius: 5px;
+  /* RED BORDER around the sidebar */
+  border: 4px solid #ff3d3d;
+  width: 10rem;
+  height: 100%;
   position: fixed;
   left: 0;
   top: 0;
-  background-color: #a9a9a9;
-  border-radius: 5px;
-  border: 4px solid #000;
-  width: 10rem;
-  height: 100%;
   transform: translateX(-100%);
   transition: transform 0.3s ease;
   z-index: 9999;
   display: flex;
   flex-direction: column;
   padding: 1.5rem;
+  margin-top: 20px;
 }
 
 .sidebar.open {
   transform: translateX(0);
 }
 
+/* Keep the toggle button fixed with a CYAN border */
 .sidebar-toggle-fixed {
   background-color: #ff3d3d;
-  border: none;
+  border: 2px solid #fff; /* CYAN border around button */
   color: #fff;
   font-family: 'Orbitron', sans-serif;
   font-size: 1em;
@@ -64,7 +64,7 @@ html, body {
   cursor: pointer;
   margin: 15px;
   border-radius: 4px;
-  position: fixed;
+  position: fixed; /* remains in place on scroll */
   z-index: 10000;
 }
 
@@ -73,10 +73,15 @@ html, body {
   color: #000;
 }
 
+/* Center the links vertically and adjust text style */
 .sidebar-links {
   list-style-type: none;
   padding: 0;
   margin: 0;
+  flex: 1; /* so it can space evenly in the column */
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* center them vertically */
 }
 
 .sidebar-links li {
@@ -84,11 +89,20 @@ html, body {
 }
 
 .sidebar-links a {
-  color: #000;
+  /* Darkish red but not too dark */
+  color: #b30000;
   text-decoration: none;
   font-size: 1.1em;
+  font-weight: bold; /* bolder text */
   border-bottom: 1px dotted transparent;
   transition: color 0.3s, border-color 0.3s;
+  position: relative;
+}
+
+/* Add a '~ ' before each link */
+.sidebar-links a::before {
+  content: '~ ';
+  color: #fff;
 }
 
 .sidebar-links a:hover {
@@ -118,13 +132,14 @@ html, body {
 }
 
 .hero-title {
-  font-family: 'Orbitron', sans-serif;
-  font-size: 2.5em;
+  font-family: 'Orbitron', sans-serif; /* The hero title uses the glitch effect below */
+  font-size: 3.7rem;
   color: #ff3d3d;
   margin-bottom: 10px;
   text-shadow: 2px 2px #000;
 }
 
+/* Keep the glitch effect for the hero title and other headings */
 .portfolio-glitch {
   position: relative;
   display: inline-block;
@@ -180,12 +195,15 @@ html, body {
 
 /* ==================== SECTION TITLES ==================== */
 .section-title {
-  font-family: 'Orbitron', sans-serif;
-  font-size: 2em;
-  color: #ff3d3d;
+  /* Use the VT323 font and make it bigger */
+  font-family: 'VT323', monospace;
+  font-size: 3.4em;
+  color: #b30000;
   text-align: center;
   margin-bottom: 20px;
-  text-shadow: 2px 2px #000;
+
+  /* Graffiti-like whitish-grey shadow (not too glowy) */
+  text-shadow: 2px 2px 0 #fff;
 }
 
 /* ==================== FADE-IN ANIMATION ==================== */
@@ -446,7 +464,7 @@ html, body {
 .terminal-section {
   margin: 0 auto 40px;
   padding: 20px;
-  max-width: 800px;
+  max-width: 40%;
   text-align: left;
   background: #000; /* pure black background */
   border: 2px solid #555;
@@ -454,7 +472,7 @@ html, body {
 }
 
 .terminal-window {
-  width: 100%;
+  width: 90%;
   height: 300px;
   overflow-y: auto;
   padding: 15px;
