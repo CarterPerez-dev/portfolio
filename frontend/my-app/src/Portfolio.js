@@ -56,106 +56,6 @@ import Resume from './CarterPerez.pdf';
 import ChartsDashboard from './ChartsDashboard';
 import ExperienceTimeline from './ExperienceTimeline';
 
-// ==================== COOL BACKGROUND CANVAS COMPONENT ====================
-// We use react-tsparticles with loadFull from tsparticles-engine (which fixes the 
-// "engine.checkVersion is not a function" issue in some versions).
-import Particles from 'react-tsparticles';
-import { loadFull } from 'tsparticles-engine';
-
-function CoolBackgroundCanvas() {
-  const particlesInit = async (engine) => {
-    // Optionally, inspect the engine with console.log(engine);
-    await loadFull(engine);
-  };
-
-  return (
-    <Particles
-      id="tsparticles"
-      init={particlesInit}
-      options={{
-        fullScreen: {
-          enable: true,
-          zIndex: -1,
-        },
-        // This background will be visible behind the particles if nothing covers it.
-        background: {
-          color: { value: "#0d47a1" }, // Deep blue
-        },
-        particles: {
-          number: {
-            value: 80,
-            density: {
-              enable: true,
-              area: 800,
-            },
-          },
-          color: {
-            // Animated array of colors for a cool effect
-            value: ["#ffffff", "#ff4081", "#7c4dff"],
-            animation: {
-              enable: true,
-              speed: 20,
-              sync: true,
-            },
-          },
-          shape: {
-            type: "circle",
-          },
-          opacity: {
-            value: 0.7,
-            random: false,
-          },
-          size: {
-            value: { min: 1, max: 3 },
-            random: true,
-          },
-          links: {
-            enable: true,
-            distance: 150,
-            color: "#ffffff",
-            opacity: 0.4,
-            width: 1,
-          },
-          move: {
-            enable: true,
-            speed: 1,
-            direction: "none",
-            random: false,
-            straight: false,
-            outModes: {
-              default: "out",
-            },
-          },
-        },
-        interactivity: {
-          events: {
-            onHover: {
-              enable: true,
-              mode: "repulse",
-            },
-            onClick: {
-              enable: true,
-              mode: "push",
-            },
-            resize: true,
-          },
-          modes: {
-            repulse: {
-              distance: 100,
-              duration: 0.4,
-            },
-            push: {
-              quantity: 4,
-            },
-          },
-        },
-        detectRetina: true,
-      }}
-    />
-  );
-}
-
-// ==================== PORTFOLIO COMPONENT ====================
 function Portfolio() {
   // ==================== AOS SCROLL ANIMATION ====================
   useEffect(() => {
@@ -263,28 +163,7 @@ function Portfolio() {
   }, [messages]);
 
   return (
-    // Inline style here overrides the app.css background so the canvas shows through.
-    <div className="portfolio-container" style={{ background: "transparent" }}>
-      {/* Inline CSS to ensure our particle canvas is fixed and behind all content */}
-      <style>{`
-        #tsparticles {
-          position: fixed;
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 100%;
-          z-index: -1;
-        }
-        .portfolio-container {
-          position: relative;
-          z-index: 0;
-          background: transparent !important;
-        }
-      `}</style>
-
-      {/* COOL BACKGROUND CANVAS */}
-      <CoolBackgroundCanvas />
-
+    <div className="portfolio-container">
       {/* SIDEBAR TOGGLE BUTTON */}
       <button className="sidebar-toggle-fixed" onClick={handleToggleSidebar}>
         {sidebarOpen ? 'CLOSE' : 'NAVIGATION'}
@@ -406,7 +285,11 @@ function Portfolio() {
                 solution for professionals, students, and educators looking to elevate their cybersecurity knowledge and readiness.
               </p>
               <p>
-                <a href="https://github.com/CarterPerez-dev/ProxyAuthRequired" target="_blank" rel="noopener noreferrer">
+                <a
+                  href="https://github.com/CarterPerez-dev/ProxyAuthRequired"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   View on GitHub
                 </a>
               </p>
@@ -422,7 +305,11 @@ function Portfolio() {
                 Earn XP, unlock badges, complete daily challenges, and track your progress—all in one place! ...coming soon
               </p>
               <p>
-                <a href="https://github.com/CarterPerez-dev/CertGamified" target="_blank" rel="noopener noreferrer">
+                <a
+                  href="https://github.com/CarterPerez-dev/CertGamified"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   View on Github
                 </a>
               </p>
@@ -481,7 +368,12 @@ function Portfolio() {
       </section>
 
       {/* TECH STACK SECTION */}
-      <section className="skills-section fade-in" data-aos="fade-up" id="skills" style={{ scrollMarginTop: '80px', padding: '40px 20px' }}>
+      <section
+        className="skills-section fade-in"
+        data-aos="fade-up"
+        id="skills"
+        style={{ scrollMarginTop: '80px', padding: '40px 20px' }}
+      >
         <h2 className="section-title">My Tech Stack</h2>
         <p style={{ textAlign: 'center', marginBottom: '20px' }}>
           Here Are Some of My Core Competencies && Technologies:
@@ -540,14 +432,24 @@ function Portfolio() {
               and ensuring quality through rigorous testing and ISO 9001 standards.
               The post also explores the importance of cable management, airflow, and modular design in creating reliable, scalable solutions that support critical operations.
             </p>
-            <a href="https://www.sealingtech.com/2024/10/03/building-custom-solutions-with-quality-at-the-core/" target="_blank" rel="noopener noreferrer" className="blog-link">
+            <a
+              href="https://www.sealingtech.com/2024/10/03/building-custom-solutions-with-quality-at-the-core/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="blog-link"
+            >
               Read More
             </a>
           </div>
           <div className="blog-post tilt-hover">
             <h3>Coming Soon</h3>
             <p>This blog I am currently still in the process of writing.</p>
-            <a href="https://www.sealingtech.com/" target="_blank" rel="noopener noreferrer" className="blog-link">
+            <a
+              href="https://www.sealingtech.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="blog-link"
+            >
               Read More
             </a>
           </div>
@@ -585,10 +487,20 @@ function Portfolio() {
           </p>
         </div>
         <div className="social-links">
-          <a href="https://github.com/CarterPerez-dev" target="_blank" rel="noopener noreferrer" className="social-icon">
+          <a
+            href="https://github.com/CarterPerez-dev"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="social-icon"
+          >
             GitHub
           </a>
-          <a href="https://www.linkedin.com/in/carter-perez-ProxyAuthRequired/" target="_blank" rel="noopener noreferrer" className="social-icon">
+          <a
+            href="https://www.linkedin.com/in/carter-perez-ProxyAuthRequired/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="social-icon"
+          >
             LinkedIn
           </a>
         </div>
