@@ -196,7 +196,12 @@ function Portfolio() {
       </section>
 
       {/* TERMINAL-STYLE ASK-ME-ANYTHING SECTION */}
-      <section className="terminal-section fade-in" data-aos="fade-up" id="askme" style={{ scrollMarginTop: '80px' }}>
+      <section
+        className="terminal-section fade-in"
+        data-aos="fade-up"
+        id="askme"
+        style={{ scrollMarginTop: '80px' }}
+      >
         <h2 className="section-title">Ask me Anything Linux Shell</h2>
         <div className="terminal-window" ref={terminalRef}>
           {messages.map((msg, idx) => {
@@ -241,7 +246,9 @@ function Portfolio() {
             value={userInput}
             placeholder="Type your command..."
             onChange={(e) => setUserInput(e.target.value)}
-            onKeyDown={(e) => { if (e.key === 'Enter') handleSend(); }}
+            onKeyDown={(e) => {
+              if (e.key === 'Enter') handleSend();
+            }}
           />
         </div>
       </section>
@@ -251,14 +258,18 @@ function Portfolio() {
         <h2 className="section-title">Where I Work</h2>
         <div className="work-details">
           <p>
-            I work at SealingTech as a System Integration Technician, where I build and configure custom cybersecurity and defense systems.
-            My focus is on designing secure, reliable environments that meet client needs and perform under demanding conditions.
-            I handle system assembly, optimization, and testing to ensure everything operates smoothly and efficiently.
-            With attention to detail and quality, I help deliver solutions that support critical operations and long-term scalability.
+            I work at SealingTech as a System Integration Technician, where I build and
+            configure custom cybersecurity and defense systems. My focus is on designing
+            secure, reliable environments that meet client needs and perform under
+            demanding conditions. I handle system assembly, optimization, and testing
+            to ensure everything operates smoothly and efficiently. With attention to
+            detail and quality, I help deliver solutions that support critical operations
+            and long-term scalability.
           </p>
           <p>
-            Outside the 9-to-5, I’m constantly learning new skills—ranging from penetration testing labs to advanced programming.
-            I believe in pushing the boundaries of what’s possible through curiosity and creative problem-solving.
+            Outside the 9-to-5, I’m constantly learning new skills—ranging from
+            penetration testing labs to advanced programming. I believe in pushing the
+            boundaries of what’s possible through curiosity and creative problem-solving.
           </p>
         </div>
       </section>
@@ -269,7 +280,12 @@ function Portfolio() {
       </section>
 
       {/* PROJECTS SECTION */}
-      <section className="projects-section fade-in" data-aos="fade-up" id="projects" style={{ scrollMarginTop: '80px' }}>
+      <section
+        className="projects-section fade-in"
+        data-aos="fade-up"
+        id="projects"
+        style={{ scrollMarginTop: '80px' }}
+      >
         <h2 className="section-title">Projects</h2>
         <div className="projects-grid">
           <div className="project-card pulse-hover">
@@ -277,12 +293,15 @@ function Portfolio() {
             <div className="project-info">
               <h3>www.ProxyAuthRequired.com</h3>
               <p>
-                ProxyAuthRequired.com is a centralized cybersecurity platform that merges AI-driven simulations,
-                hands-on learning modules, and a robust Resource Hub to help users at any level sharpen their skills.
-                It includes tools like GRC Wizard for compliance questions, Log Analysis for real-time practice,
-                and scenario-based exercises for incident response.
-                By combining interactive content with up-to-date threats and exam objectives, ProxyAuthRequired.com strives to be a single-stop
-                solution for professionals, students, and educators looking to elevate their cybersecurity knowledge and readiness.
+                ProxyAuthRequired.com is a centralized cybersecurity platform that merges
+                AI-driven simulations, hands-on learning modules, and a robust Resource
+                Hub to help users at any level sharpen their skills. It includes tools
+                like GRC Wizard for compliance questions, Log Analysis for real-time
+                practice, and scenario-based exercises for incident response. By combining
+                interactive content with up-to-date threats and exam objectives,
+                ProxyAuthRequired.com strives to be a single-stop solution for
+                professionals, students, and educators looking to elevate their
+                cybersecurity knowledge and readiness.
               </p>
               <p>
                 <a
@@ -300,9 +319,10 @@ function Portfolio() {
             <div className="project-info">
               <h3>CertsGamified.com</h3>
               <p>
-                CertsGamified: A gamified platform that makes certification prep engaging and fun.
-                Follow structured roadmaps to learn, practice, and master certifications like CompTIA.
-                Earn XP, unlock badges, complete daily challenges, and track your progress—all in one place! ...coming soon
+                CertsGamified: A gamified platform that makes certification prep engaging
+                and fun. Follow structured roadmaps to learn, practice, and master
+                certifications like CompTIA. Earn XP, unlock badges, complete daily
+                challenges, and track your progress—all in one place! ...coming soon
               </p>
               <p>
                 <a
@@ -319,7 +339,12 @@ function Portfolio() {
       </section>
 
       {/* CERTIFICATIONS SECTION */}
-      <section className="certifications-section fade-in" data-aos="fade-up" id="certifications" style={{ scrollMarginTop: '80px' }}>
+      <section
+        className="certifications-section fade-in"
+        data-aos="fade-up"
+        id="certifications"
+        style={{ scrollMarginTop: '80px' }}
+      >
         <h2 className="section-title">Certifications</h2>
         <div className="certs-grid">
           <div className="cert-card scale-hover">
@@ -383,54 +408,109 @@ function Portfolio() {
             <h3 className="skills-header">
               <FaUsers style={{ marginRight: '5px' }} /> Interpersonal
             </h3>
-            <div className="skill-card"><FaUserFriends /> Team Player</div>
-            <div className="skill-card"><FaUserTie /> Leader</div>
-            <div className="skill-card"><FaHammer /> Hard Worker</div>
-            <div className="skill-card"><FaHeadset /> Customer Service</div>
-            <div className="skill-card"><FaEye /> Attention to Detail</div>
-            <div className="skill-card"><FaPuzzlePiece /> Flexible</div>
-            <div className="skill-card"><FaUserCheck /> Honesty</div>
+            <div className="skill-card">
+              <FaUserFriends /> Team Player
+            </div>
+            <div className="skill-card">
+              <FaUserTie /> Leader
+            </div>
+            <div className="skill-card">
+              <FaHammer /> Hard Worker
+            </div>
+            <div className="skill-card">
+              <FaHeadset /> Customer Service
+            </div>
+            <div className="skill-card">
+              <FaEye /> Attention to Detail
+            </div>
+            <div className="skill-card">
+              <FaPuzzlePiece /> Flexible
+            </div>
+            <div className="skill-card">
+              <FaUserCheck /> Honesty
+            </div>
           </div>
           <div className="skills-column">
             <h3 className="skills-header">
               <FaTasks style={{ marginRight: '5px' }} /> Functional
             </h3>
-            <div className="skill-card"><FaShieldAlt /> Compliance</div>
-            <div className="skill-card"><FaExclamationTriangle /> Risk Management</div>
-            <div className="skill-card"><FaUserSecret /> Cyber Analyst</div>
-            <div className="skill-card"><FaCodeBranch /> DevOps</div>
+            <div className="skill-card">
+              <FaShieldAlt /> Compliance
+            </div>
+            <div className="skill-card">
+              <FaExclamationTriangle /> Risk Management
+            </div>
+            <div className="skill-card">
+              <FaUserSecret /> Cyber Analyst
+            </div>
+            <div className="skill-card">
+              <FaCodeBranch /> DevOps
+            </div>
           </div>
           <div className="skills-column">
             <h3 className="skills-header">Technical</h3>
-            <div className="skill-card"><SiPython /> Python</div>
-            <div className="skill-card"><SiJavascript /> JavaScript</div>
-            <div className="skill-card"><SiDocker /> Docker</div>
-            <div className="skill-card"><SiReact /> React</div>
-            <div className="skill-card"><SiLinux /> Linux</div>
-            <div className="skill-card"><SiAmazonwebservices /> AWS</div>
-            <div className="skill-card"><SiMongodb /> MongoDB</div>
-            <div className="skill-card"><SiNodedotjs /> Node.js</div>
-            <div className="skill-card"><SiFlask /> Flask</div>
-            <div className="skill-card"><SiNginx /> Nginx</div>
-            <div className="skill-card"><SiApache /> Apache</div>
-            <div className="skill-card"><SiGnubash /> Bash</div>
-            <div className="skill-card"><SiOpenai /> OpenAI</div>
+            <div className="skill-card">
+              <SiPython /> Python
+            </div>
+            <div className="skill-card">
+              <SiJavascript /> JavaScript
+            </div>
+            <div className="skill-card">
+              <SiDocker /> Docker
+            </div>
+            <div className="skill-card">
+              <SiReact /> React
+            </div>
+            <div className="skill-card">
+              <SiLinux /> Linux
+            </div>
+            <div className="skill-card">
+              <SiAmazonwebservices /> AWS
+            </div>
+            <div className="skill-card">
+              <SiMongodb /> MongoDB
+            </div>
+            <div className="skill-card">
+              <SiNodedotjs /> Node.js
+            </div>
+            <div className="skill-card">
+              <SiFlask /> Flask
+            </div>
+            <div className="skill-card">
+              <SiNginx /> Nginx
+            </div>
+            <div className="skill-card">
+              <SiApache /> Apache
+            </div>
+            <div className="skill-card">
+              <SiGnubash /> Bash
+            </div>
+            <div className="skill-card">
+              <SiOpenai /> OpenAI
+            </div>
           </div>
         </div>
       </section>
 
       {/* BLOG SECTION */}
-      <section className="blog-section fade-in" data-aos="fade-up" id="blog" style={{ scrollMarginTop: '80px' }}>
+      <section
+        className="blog-section fade-in"
+        data-aos="fade-up"
+        id="blog"
+        style={{ scrollMarginTop: '80px' }}
+      >
         <h2 className="section-title">My Blog</h2>
         <div className="blog-list">
           <div className="blog-post tilt-hover">
             <h3>Building Custom Solutions with Quality at the Core</h3>
             <p>
               The blog highlights the role of a System Integration Technician at SealingTech,
-              showcasing how custom defense and cybersecurity systems are designed and built to meet specific client needs.
-              It dives into the process of selecting and configuring hardware, optimizing system performance,
-              and ensuring quality through rigorous testing and ISO 9001 standards.
-              The post also explores the importance of cable management, airflow, and modular design in creating reliable, scalable solutions that support critical operations.
+              showcasing how custom defense and cybersecurity systems are designed and built
+              to meet specific client needs. It dives into the process of selecting and
+              configuring hardware, optimizing system performance, and ensuring quality
+              through rigorous testing and ISO 9001 standards. The post also explores the
+              importance of cable management, airflow, and modular design in creating
+              reliable, scalable solutions that support critical operations.
             </p>
             <a
               href="https://www.sealingtech.com/2024/10/03/building-custom-solutions-with-quality-at-the-core/"
@@ -442,10 +522,10 @@ function Portfolio() {
             </a>
           </div>
           <div className="blog-post tilt-hover">
-            <h3>Coming Soon</h3>
-            <p>This blog I am currently still in the process of writing.</p>
+            <h3>How My Career Growth Led to Enhancing Customer Experience</h3>
+            <p> This blog post outlines my journey of professional and personal growth as an Integration Technician at SealingTech. It delves into how pursuing industry certifications has not only sharpened my technical skills but also reshaped my approach to real-world challenges. From preparing for rigorous exams to applying newfound knowledge in day-to-day operations, the post details the practical steps and insights that have driven my evolution. Additionally, I explore the impact of building a personal website project, which reinforced my commitment to continuous learning and innovative problem-solving in a rapidly changing cybersecurity landscape</p>
             <a
-              href="https://www.sealingtech.com/"
+              href="https://www.sealingtech.com/2025/02/03/how-my-career-growth-led-to-enhancing-customer-experience/"
               target="_blank"
               rel="noopener noreferrer"
               className="blog-link"
@@ -462,18 +542,33 @@ function Portfolio() {
       </section>
 
       {/* RESUME SECTION */}
-      <section className="resume-section fade-in" data-aos="fade-up" id="resume" style={{ scrollMarginTop: '80px' }}>
+      <section
+        className="resume-section fade-in"
+        data-aos="fade-up"
+        id="resume"
+        style={{ scrollMarginTop: '80px' }}
+      >
         <h2 className="section-title">My Résumé</h2>
         <div className="resume-info">
           <p>View or download my detailed résumé below:</p>
-          <a href={Resume} target="_blank" rel="noopener noreferrer" className="resume-link">
+          <a
+            href={Resume}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="resume-link"
+          >
             Check Out My Résumé
           </a>
         </div>
       </section>
 
       {/* CONTACT & SOCIALS SECTION */}
-      <section className="contact-social-section fade-in" data-aos="fade-up" id="contact" style={{ scrollMarginTop: '80px' }}>
+      <section
+        className="contact-social-section fade-in"
+        data-aos="fade-up"
+        id="contact"
+        style={{ scrollMarginTop: '80px' }}
+      >
         <h2 className="section-title">Contact & Social</h2>
         <div className="contact-info">
           <p>
@@ -481,7 +576,10 @@ function Portfolio() {
           </p>
           <p>
             Email:{' '}
-            <a href="mailto:CarterPerez-dev@ProxyAuthRequired.com" className="accent-link">
+            <a
+              href="mailto:CarterPerez-dev@ProxyAuthRequired.com"
+              className="accent-link"
+            >
               CarterPerez-dev@ProxyAuthRequired.com
             </a>
           </p>
@@ -509,7 +607,8 @@ function Portfolio() {
       {/* FOOTER SECTION */}
       <footer className="portfolio-footer">
         <p>
-          © {new Date().getFullYear()} Designed and Developed by Carter Perez - All Rights Reserved ©
+          © {new Date().getFullYear()} Designed and Developed by Carter Perez - All
+          Rights Reserved ©
         </p>
       </footer>
     </div>
